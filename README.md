@@ -8,3 +8,14 @@ Zum Erstellen des PDFs bitte die maint.tex im Hauptordner kompilieren. Evtl. mü
 Beispielpräsentation: http://algo2.iti.kit.edu/sensornets_09.php   (unter Material & Links)
 
 Beameruserguide: http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf
+
+Thema | Name
+------------ | -------------
+Einleitung | Matthias 
+BFS | Matthias
+DFS | Beini
+iterative Tiefensuche | Gustavo
+starke Zusammenhangs| Matthias Schimek
+bipartite Graphen| Gustavo
+Brücken? | Matthias Schimek
+
