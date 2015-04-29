@@ -1,6 +1,10 @@
+
 # ICPC_Graph1
-## Die eigentlichen Folien finden sich unter parts/
 
-## Zum Erstellen des PDFs bitte die maint.tex im Hauptordner kompilieren. Evtl. müsst ihr wegen der KIT-Vorlage in eurer TEX-Distribution noch einige Pakete nachinstallieren (TexStudio macht das automatisch, bei anderen weiß ich es nicht ;))
+Die eigentlichen Folien finden sich unter parts/
 
-## Unter example/ findet sich eine Beispielpräsentation 
+Zum Erstellen des PDFs bitte die maint.tex im Hauptordner kompilieren. Evtl. müsst ihr wegen der KIT-Vorlage in eurer TEX-Distribution noch einige Pakete nachinstallieren (TexStudio macht das automatisch, bei anderen weiß ich es nicht ;))
+
+Beispielpräsentation: http://algo2.iti.kit.edu/sensornets_09.php   (unter Material & Links)
+
+Beameruserguide: http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf
