@@ -15,7 +15,7 @@ Einleitung [Wiederholung Graphstrukturen + wichtige Begriffe in Graphen] | Matth
 BFS [Vorstellung Konzept + Implementierung] | Matthias
 DFS [Vorstellung Konzept + rekursive und nicht-rekur. Implementierung + Beispielaufgabe] | Beini
 iterative Tiefensuche | Gustavo
-SCC [ Algorithmus + Implementierung] | Matthias Schimek
+SCC [ Algorithmus + Implementierung, evtl. anhand einer Aufgabe] | Matthias Schimek
 bipartite Graphen [Algorithmus] | Gustavo
 Brücken [Abhängig vom Umfang der anderen Themen] | Matthias Schimek
 
