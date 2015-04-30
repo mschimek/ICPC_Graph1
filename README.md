@@ -11,11 +11,11 @@ Beameruserguide: http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contri
 
 Thema | Name
 ------------ | -------------
-Einleitung | Matthias 
-BFS | Matthias
-DFS | Beini
+Einleitung [Wiederholung Graphstrukturen + wichtige Begriffe in Graphen] | Matthias 
+BFS [Vortellung Konzept + Implementierung] | Matthias
+DFS [Vorstellung Konzept + rekursive und nicht-rekur. Implementierung + Beispielaufgabe] | Beini
 iterative Tiefensuche | Gustavo
-starke Zusammenhangs| Matthias Schimek
-bipartite Graphen| Gustavo
-Brücken? | Matthias Schimek
+SCC [ Algorithmus + Implementierung] | Matthias Schimek
+bipartite Graphen [Algorithmus] | Gustavo
+Brücken [Abhängig vom Umfang der anderen Themen] | Matthias Schimek
 
