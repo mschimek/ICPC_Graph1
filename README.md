@@ -12,7 +12,7 @@ Beameruserguide: http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contri
 Thema | Name
 ------------ | -------------
 Einleitung [Wiederholung Graphstrukturen + wichtige Begriffe in Graphen] | Matthias 
-BFS [Vortellung Konzept + Implementierung] | Matthias
+BFS [Vorstellung Konzept + Implementierung] | Matthias
 DFS [Vorstellung Konzept + rekursive und nicht-rekur. Implementierung + Beispielaufgabe] | Beini
 iterative Tiefensuche | Gustavo
 SCC [ Algorithmus + Implementierung] | Matthias Schimek
