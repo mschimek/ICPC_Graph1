@@ -1,0 +1,49 @@
+\begin{frame}
+	\frametitle{SCCs finden mittels DFS}
+	\framesubtitle{Beispielaufgabe}
+	\begin{KITexampleblock}{UVa 11383 Come and Go}
+		In einer Stadt gibt es $N$  Kreuzungen, die durch Straßen verbunden sind.
+		Da man in der Stadt von einem Punkt (Kreuzung) zu jedem anderen kommen möchte, sollte es eine Verbindung zwischen zwei beliebigen Kreuzungen geben. \\
+		Für eine gegebene Stadt mit $N$ Kreuzungen und $M$ Straßen soll entschieden werden, ob dies möglich ist.
+			
+	\end{KITexampleblock}
+	\pause 
+	\bigskip
+	
+	\begin{KITinfoblock}{Definition Strongly Connected Components SCC}
+		In einem gerichteten Graph $G = (V,E)$, wird $V' \subseteq V$ starke Zusammenhangskomponente (SCC) genannt, wenn zwischen je zwei Knoten in $V'$ ein Pfad existiert.
+	\end{KITinfoblock}
+	
+	
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Zum Lösen der Aufgabe untersuchen, ob das Straßennetz der Stadt aus einer oder mehreren SCCs besteht.
+		\item $\Rightarrow$ Benötigen effizienten Algorithmus zum Finden von SCCs 
+	\end{itemize}	
+	\pause
+	\heading{Algorithmus von Tarjan für SCCs}
+	\begin{itemize}
+		\item Wurde von Robert Tarjan gefunden
+		\item Basiert auf dem Konzept der DFS
+		\item Laufzeit: $\mathcal{O}(|V| + |E|)$
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\includegraphics[scale = 0.5]<1-1>{SCC.pdf}
+	\includegraphics[scale = 0.5]<2-2>{SCC_1.pdf}
+	\includegraphics[scale = 0.5]<3-3>{SCC_2.pdf}
+	\includegraphics[scale = 0.5]<4-4>{SCC_3.pdf}
+%	\includegraphics[scale = 0.5]<5-5>{SCC_4.pdf}
+	\includegraphics[scale = 0.5]<5-5>{SCC_5.pdf}
+	\includegraphics[scale = 0.5]<6-6>{SCC_6.pdf}
+	\includegraphics[scale = 0.5]<7-7>{SCC_7_2.pdf}
+	\includegraphics[scale = 0.5]<8-8>{SCC_7.pdf}
+	\includegraphics[scale = 0.5]<9-9>{SCC_8.pdf}
+	\includegraphics[scale = 0.5]<10-10>{SCC_9.pdf}
+	\includegraphics[scale = 0.5]<11-11>{SCC_10.pdf}
+	\includegraphics[scale = 0.5]<12-12>{SCC_11.pdf}
+	\includegraphics[scale = 0.5]<13-13>{SCC_12.pdf}
+	\includegraphics[scale = 0.5]<14-14>{SCC_13.pdf}
+\end{frame}
