@@ -20,6 +20,15 @@ bipartite Graphen [Algorithmus] | Gustavo
 Brücken [Abhängig vom Umfang der anderen Themen] | Matthias Schimek
 
 # Skizze:
+Einleitung
+  - Vorstellung der grundlegenden Begriffe (Tabelle 4.1)
+  - Graphen Implementierungen (Adjazenzmatrix, Adjazenzliste, Edgelist)
+  - Unterschiede der Implementierungen
+
+BFS
+  - Beschreibung am Beispiel
+  - Implementierung
+  - Eigenschaften
 
 DFS
   - Problem anhand eines Problems vorstellen (Indiana Jones and the Fate of Atlantis)
