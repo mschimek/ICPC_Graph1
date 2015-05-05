@@ -21,6 +21,13 @@ Brücken [Abhängig vom Umfang der anderen Themen] | Matthias Schimek
 
 # Skizze:
 
+DFS
+  - Problem anhand eines Problems vorstellen (Indiana Jones and the Fate of Atlantis)
+  - Implementierung der rekursiven Suche anhand des Sourcecodes erklären
+  - Implementierung der nicht-rekursiven Suche anhand des Sourcecodes erklären
+  - Beispielaufgabe (UVa 11902 Dominator)
+  - Gebrauch, Eigenschaften und Vor- und Nachteile der Tiefensuche
+
 SCC
   - Problem anhand einer Aufgabe vorstellen (UVa 11383 Come and Go)
   - Definition SCC
