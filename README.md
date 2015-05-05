@@ -19,3 +19,15 @@ SCC [ Algorithmus + Implementierung, evtl. anhand einer Aufgabe] | Matthias Schi
 bipartite Graphen [Algorithmus] | Gustavo
 Brücken [Abhängig vom Umfang der anderen Themen] | Matthias Schimek
 
+# Skizze:
+
+SCC
+  - Problem anhand einer Aufgabe vorstellen (UVa 11383 Come and Go)
+  - Definition SCC
+  - Idee des Algorithmus' visualisieren (Ablauf anhand eines Beispiels)
+  - Sourcecode erklären
+
+Brücken
+  - Definition Brücke/Separator
+  - Idee des Algorithmus' visualisieren (diesmal nur anhand eines Bildes)
+  - Sourcecode erklären
