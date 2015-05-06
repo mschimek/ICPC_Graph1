@@ -37,11 +37,15 @@ DFS
   - Beispielaufgabe (UVa 11902 Dominator)
   - Gebrauch, Eigenschaften und Vor- und Nachteile der Tiefensuche
 
+Iterative Tiefensuche
+
 SCC
   - Problem anhand einer Aufgabe vorstellen (UVa 11383 Come and Go)
   - Definition SCC
   - Idee des Algorithmus' visualisieren (Ablauf anhand eines Beispiels)
   - Sourcecode erklären
+  
+Bipartite Graphen
 
 Brücken
   - Definition Brücke/Separator
