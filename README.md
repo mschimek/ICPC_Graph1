@@ -38,6 +38,9 @@ DFS
   - Gebrauch, Eigenschaften und Vor- und Nachteile der Tiefensuche
 
 Iterative Tiefensuche
+	- Definition Iterative Tiefensuche
+	- Algorithmus I.T. und Unterschieden zwischen I.T. und BFS/DFS (Memory, Laufzeit)
+	- "Indiana Jones and the Fate of Atlantis" mit Iterative Tiefensuche Beispiel
 
 SCC
   - Problem anhand einer Aufgabe vorstellen (UVa 11383 Come and Go)
@@ -46,6 +49,9 @@ SCC
   - Sourcecode erklären
   
 Bipartite Graphen
+  - Definition Bipartite Graphen
+  - Beispielaufgabe (UVa 10004 Bicoloring) mit DFS
+  - Beispielaufgabe (UVa 10004 Bicoloring) mit BFS
 
 Brücken
   - Definition Brücke/Separator
