@@ -18,6 +18,7 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{SCCs finden mittels DFS}
 	\begin{itemize}
 		\item Zum Lösen der Aufgabe untersuchen, ob das Straßennetz der Stadt aus einer oder mehreren SCCs besteht.
 		\item $\Rightarrow$ Benötigen effizienten Algorithmus zum Finden von SCCs 
@@ -31,11 +32,12 @@
 	\end{itemize}
 \end{frame}
 \begin{frame}
+	
+	\frametitle{SCCs finden mittels DFS}
 	\includegraphics[scale = 0.5]<1-1>{SCC.pdf}
 	\includegraphics[scale = 0.5]<2-2>{SCC_1.pdf}
 	\includegraphics[scale = 0.5]<3-3>{SCC_2.pdf}
 	\includegraphics[scale = 0.5]<4-4>{SCC_3.pdf}
-%	\includegraphics[scale = 0.5]<5-5>{SCC_4.pdf}
 	\includegraphics[scale = 0.5]<5-5>{SCC_5.pdf}
 	\includegraphics[scale = 0.5]<6-6>{SCC_6.pdf}
 	\includegraphics[scale = 0.5]<7-7>{SCC_7_2.pdf}
@@ -46,4 +48,18 @@
 	\includegraphics[scale = 0.5]<12-12>{SCC_11.pdf}
 	\includegraphics[scale = 0.5]<13-13>{SCC_12.pdf}
 	\includegraphics[scale = 0.5]<14-14>{SCC_13.pdf}
+\end{frame}
+
+\begin{frame}
+	\frametitle{SCCs finden mittels DFS}
+	\framesubtitle{Sourcecode}
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++,firstline=17, lastline=37]{sourcecode/SCC_all.cpp}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize} 
+		\item \textbf{findSCC(int u)} findet alle SCCs, die von Konten \textbf{u} aus erreichbar sind.
+			\item Für vollständige Liste an SCCs \textbf{findSCC(int u)} für alle Knoten eines Graphen laufen lassen.
+	\end{itemize}
 \end{frame}

@@ -13,7 +13,7 @@
 \newenvironment<>{KITtestblock}[2][]
 {\begin{KITcolblock}<#1>{#2}{KITblack15}{KITblack50}}
 {\end{KITcolblock}}
-
+\graphicspath{{./images/}{./images/SCC/}{./images/Bruecken/}}
 \usepackage[ngerman,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[TS1,T1]{fontenc}
@@ -22,7 +22,9 @@
 \usepackage[absolute,overlay]{textpos}
 \usepackage{beamerKITdefs}
 \usepackage[bold,full]{complexity}
+\usepackage{listings}
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
 
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}	%required to prevent color shifting withd transparent images
 
