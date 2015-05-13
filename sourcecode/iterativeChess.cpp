@@ -1,12 +1,11 @@
-vector< vector<int> > adjList;
-const int LIMITBREAK = -1;
+vector< vector<int> > moveList;
 
-int iterativeDFS(int origin)
+int thinkDFS(int origin, int movesAhead)
 {
-	int depth = 0, found = LIMITBREAK;
-	while(found == LIMITBREAK) 
+	int bestValue = 0, bestMove;
+	for(int depth = 1; depth <= movesAhead; depth++)
 	{
-		found = limitedDFS(origin,depth);
+		int found = limitedDFS(origin,depth);
 		depth++;
 	}
 	return found;
@@ -14,11 +13,11 @@ int iterativeDFS(int origin)
 	
 int limitedDFS(int v, int depth)
 {
-	if(depth == 0 && v == goal)
-		return v;
-	else if(depth > 0)
+	if(depth == 0)
+		return evaluate(boardState);
+	else
 	{
-		for(int i = 0; i < adjList[v].size(); i++)	
+		for(int i = 0; i < moveList[v].size(); i++)	
 		{
 			int found = limitedDFS(adjList[v][i], depth-1);
 			if(found != LIMITBREAK)
