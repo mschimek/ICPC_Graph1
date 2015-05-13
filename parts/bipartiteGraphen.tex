@@ -1,0 +1,45 @@
+\begin{frame}
+	\frametitle{Bipartite Graphen}
+	\framesubtitle{Definition}
+	\begin{KITinfoblock}{Separatoren und Brücken in ungerichteten Graphen}
+		Sei $G = (V,E)$ ein ungerichteter Graph.
+	\begin{itemize}
+		\item  $G$ heißt \textbf{Bipartite} falls sich seine Knoten in zwei disjunkte Teilmengen $A, B$ aufteilen lassen, so dass es zwischen den Knoten innerhalb einer Teilmenge keine Kanten gibt.
+		\item  Das heißt, für jeder Kante $\{u,v\} \in E$ gilt entweder $u \in A$ und $v \in B$ oder $u \in B$ und $v \in A$.
+	\end{itemize}
+	\end{KITinfoblock}
+\end{frame}
+\begin{frame}
+	\frametitle{Bipartite Graphen}
+	\framesubtitle{Beispiel}
+	\includegraphics[scale = 0.43]<1-1>{images/Bipartite/AB1}  
+	\includegraphics[scale = 0.43]<2-2>{images/Bipartite/AB2}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bipartite Graph Check}
+	\framesubtitle{DFS Algorithmus}
+	\includegraphics[scale = 0.7]<1-1>{images/Bipartite/t0}
+	\includegraphics[scale = 0.7]<2-2>{images/Bipartite/t1}
+	\includegraphics[scale = 0.7]<3-3>{images/Bipartite/t2}
+	\includegraphics[scale = 0.7]<4-4>{images/Bipartite/t3}
+	\includegraphics[scale = 0.7]<5-5>{images/Bipartite/t4}
+	\includegraphics[scale = 0.7]<6-6>{images/Bipartite/t5}
+	\includegraphics[scale = 0.7]<7-7>{images/Bipartite/t6}
+	\includegraphics[scale = 0.7]<8-8>{images/Bipartite/t7}
+	\includegraphics[scale = 0.7]<9-9>{images/Bipartite/t8}
+	\includegraphics[scale = 0.7]<10-10>{images/Bipartite/t9}
+	\includegraphics[scale = 0.7]<11-11>{images/Bipartite/t91}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bipartite Graph Check}
+	\framesubtitle{DFS Algorithmus}
+	\lstinputlisting[style=customc++]{sourcecode/bipartiteDFS.cpp}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bipartite Graph Check}
+	\framesubtitle{BFS Algorithmus}
+	\lstinputlisting[style=customc++]{sourcecode/bipartiteBFS.cpp}	
+\end{frame}
