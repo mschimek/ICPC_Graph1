@@ -12,7 +12,7 @@
 \newenvironment<>{KITtestblock}[2][]
 {\begin{KITcolblock}<#1>{#2}{KITblack15}{KITblack50}}
 {\end{KITcolblock}}
-\graphicspath{{./images/}{./images/SCC/}{./images/Bruecken/}{./images/DFS/}}
+\graphicspath{{./images/}{./images/SCC/}{./images/Bruecken/}{./images/Iterative/}{./images/Bipartite/}{./images/DFS/}}
 \usepackage[ngerman,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[TS1,T1]{fontenc}
@@ -25,6 +25,20 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 
+\lstdefinestyle{customc++}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	tabsize=4,
+}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 
