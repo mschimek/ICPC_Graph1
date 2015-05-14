@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-bool dfs_visited[AdjMatrix.size()];
+bool dfs_visited[AdjMatrix.size()] = {0};
 
 void dfs(int u) {
 	dfs_visited[u] = true;
