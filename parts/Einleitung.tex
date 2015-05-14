@@ -1,0 +1,112 @@
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Grundbegriffe der Graphentheorie}
+    \begin{KITexampleblock}{Graph}
+\begin{itemize}
+    \item Ein Graph $G$ ist ein geordnetes Paar $G = (V, E)$
+    \item $V$ Menge von Knoten/Vertices
+    \item $E$ Menge von Kanten/Edges
+    \begin{itemize}
+        \item ungerichteter Graph (ohne Mehrfachkanten) $E \subseteq \{ M \in \mathcal{P}(V) \mid |M| = 2\}$
+        \item gerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V$
+    \end{itemize}
+\end{itemize}
+    \end{KITexampleblock}
+\end{frame}
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Grundbegriffe der Graphentheorie}
+    \begin{center}
+    einige bereits bekannte Begriffe \\
+    \begin{tabular}{c | c | c}
+    \hline
+    Un/Gerichtet & Un/Gewichtet & Schlinge \\ \hline
+    (Ein/Ausgangs) Grad & Weg/Pfad & Zyklus/Kreis \\ \hline
+    Knoten ereichbar/isoliert & Teil/Untergraph & Baum \\ \hline
+    \end{tabular}
+    \end{center}
+    \begin{itemize}
+    \item einfacher Graph := ungerichteter Graph, ohne Mehrfachkanten und ohne Schleifen
+    \item DAG (directed acyclic graph) := ein gerichteter Graph ohne Zyklus
+    \item vollständiger Graph := maximale Kantenanzahl \( |E| = \frac{|V| (|V| - 1)}{2}\)
+    \item Dichte \( dn(G) = \frac{2|E|}{|V| (|V| - 1)}\)
+    \begin{itemize}
+        \item Verhältnis der Kantenanzahl zur Kantenanzahl eines vollständigen Graphen auf gleichvielen Knoten
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{Einleitung}
+%     \framesubtitle{Grundbegriffe der Graphentheorie}
+%     \begin{itemize}
+%         \item Teilgraph \( T_V \subseteq V\) und \( T_E \subseteq E \land \forall (x, y) \in T_E : x, y \in T_V\)
+%         \item Untegraph \( U_V \subseteq V\) und \( U_E = \{ (x, y) \in E \mid x, y \in U_V\}\)
+%         \item Schlinge $\{(x,x) \in E \mid x \in V\}$
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Einleitung}
+%     \framesubtitle{Grundbegriffe der Graphentheorie}
+%     \begin{itemize}
+%         \item Weg \( w = (v_1, v_2, … , v_n) \mbox{ und } \forall i \in \{1, … , n-1\} : (v_i, v_{i+1}) \in E \)
+%         \item Pfad $p :=$ Weg mit paarweise verschiedenen Knoten
+%         \item Kreis \( := \) Pfad, der im selben Knoten beginnt und endet
+%         \item Zyklus \( :=\) Weg, der im selben Knoten beginnt und endet
+%         \item Eulerkreis := Zyklus der über alle Kanten eines Graphen läuft
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Einleitung}
+%     \framesubtitle{Grundbegriffe der Graphentheorie}
+%     \begin{itemize}
+%         \item Baum := maximal kreisfrei und minimal zusammenhängend
+%         \begin{itemize}
+%             \item keine Kante kann zur Kantenmenge hinzugefügt werden, ohne einen Kreis zu erzeugen, und keine kann entfernt werden, ohne die Zusammenhangs-Eigenschaft zu verletzen
+%         \end{itemize}
+%     \end{itemize}
+% \end{frame}
+
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Implementierungen (gewichtet)}
+    \begin{center}
+    \includegraphics[scale = 0.35]<1-1>{./images/Einleitung/graph.png}
+
+    \begin{tabular}{c | c | c | c}
+     & Adj.matrix & Adj.liste & Edgelist\\ \hline
+    Code & int[][]  & vec<vec<pair<int,int>{}>{}> & vec<tuple<int,int,int> \\ \hline
+    Platz & \( \mathcal{O}(|V|^2)\) &\( \mathcal{O}(|V|+|E|)\) &\( \mathcal{O}(|E|)\) \\
+    \end{tabular}
+    \end{center}
+
+    \includegraphics[scale = 0.32]<1-1>{./images/Einleitung/representation.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Implementierungen Unterschiede}
+
+\begin{itemize}
+    \item Adjazenzmatrix
+    \begin{itemize}
+        \item hoher Speicherverbrauh
+        \item Anwenden bei kleinen dichten Graphen
+        \item über Nachbarn iterieren \( \mathcal{O}(|V|)\)
+        \item ICPC Tipp: wenn \(V \le 1000 \)
+    \end{itemize}
+
+    \item Adjazenzliste
+    \begin{itemize}
+        \item kompakter und effizienter, da oft \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
+        \item über alle k Nachbarn iterieren \( \mathcal{O}(k)\)
+    \end{itemize}
+    \item Edgelist
+    \begin{itemize}
+        \item sortiert (bspw. nach Gewicht) wichtige Representation für bestimmte Algorithmen
+        \item verkomplizier viele Algorithmen
+    \end{itemize}
+\end{itemize}
+\end{frame}
