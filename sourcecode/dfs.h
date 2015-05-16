@@ -2,20 +2,20 @@
 #include <vector>
 using namespace std;
 
-bool dfs_visited[AdjMatrix.size()] = {0};
+bool dfs_visited[AdjList.size()] = {0};
 
 void dfs(int u) {
 	dfs_visited[u] = true;
 	// possibly do something
-	for (int i = 0; i < AdjMatrix[u].size(); i++) {
-		if (AdjMatrix[u][i] == 1 
+	for (int i = 0; i < AdjList[u].size(); i++) {
+		if (AdjList[u][i] == 1 
 			&& dfs_visited[i] == false) {
 			dfs(i);
 		}
 	}
 }
 
-for (int i = 0; i < AdjMatrix.size(); i++) {
+for (int i = 0; i < AdjList.size(); i++) {
 	if (dfs_visited[i] == false) {
 		dfs(i);
 	}
@@ -23,7 +23,7 @@ for (int i = 0; i < AdjMatrix.size(); i++) {
 
 int main()
 {
-	int AdjMatrix[5][5];
+	int AdjList[5][5];
 	int counter;
 	cin >> counter;
 	for (int i = 0; i < counter; i++) {

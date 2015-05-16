@@ -49,9 +49,6 @@
 	\framesubtitle{rekursive Implementierung}
 	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
 	\lstinputlisting[language=C++,firstline=5, lastline=22]{sourcecode/dfs.h}
-			\pause 
-			\bigskip	
-	Laufzeit: $\mathcal{O}(|V|^2)$, wenn der Graph als Adjazenzmatrix gespeichert ist, sonst $\mathcal{O}(|V| + |E|)$
 \end{frame}
 
 \begin{frame}
@@ -76,7 +73,27 @@
 
 \begin{frame}
 	\frametitle{Tiefensuche}
-	\framesubtitle{rekursive Implementierung}
+	\framesubtitle{informell}
+	\begin{itemize}
+		\item Laufzeit: $\mathcal{O}(|V| + |E|)$, wenn der Graph als Adjazenzliste gespeichert ist oder als Adjazentmatrix $\mathcal{O}(|V|^2)$
+		\item Die Tiefensuche ist nicht optimal, wird im Allgemeinen nicht die kürzeste Verbindung zum Ziel gefunden.
+		\item Der Speicherbrauch ist linear, da nur Informationen darüber gespeichert werden, ob ein Knoten schon besucht wurde.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+		\frametitle{Tiefensuche}
+		\framesubtitle{mögliche Probleme}
+		\begin{itemize}
+			\item Der Graph ist unendlich groß, in diesem Fall gibt es keine Möglichkeit, für jeden Knoten Informationen zu speichern.
+			\item Es ist nach einem optimalen Ergebnis gefragt.
+			\item Durch die vielen Rekursionsebenen wird das Rekursionslimit vom Betriebssystem überschritten.
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tiefensuche}
+	\framesubtitle{nichtrekursive Implementierung}
 	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
 	\lstinputlisting[language=C++,firstline=1, lastline=20]{sourcecode/nrdfs.h}
 \end{frame}
@@ -138,14 +155,4 @@
 						\bigskip
 			\item Laufzeit ist $\mathcal{O}(|V|^3)$ im worst case.
 		\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Tiefensuche}
-	\framesubtitle{Allgemeines}
-			\begin{itemize}
-				\item Der Speicherplatz für den Algorithmus ist linear, da Informationen darüber gespeichert werden, ob ein Knoten schon besucht wurde.
-				\item Die Laufzeit ist, wie bereits erwähnt $\mathcal{O}(|V|^2)$, wenn der Graph als Adjazenzmatrix gespeichert ist, sonst $\mathcal{O}(|V| + |E|)$.
-				\item Die Tiefensuche ist eher ungeeignet für Graphen mit monoton steigenden Pfadkosten. Dafür eher Breitensuche oder iterative Tiefensuche.
-			\end{itemize}
 \end{frame}
