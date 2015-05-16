@@ -7,8 +7,8 @@ nrdfs(int u) {
 	while(!myStack.empty()){
 		current = myStack.top();
 		myStack.pop();
-		for(int i = 0; i < AdjMatrix.size(); i++){
-			if(AdjMatrix[current][i] == 1){
+		for(int i = 0; i < AdjList.size(); i++){
+			if(AdjList[current][i] == 1){
 				if(dfs_visited[i] == false){ 
 					myStack.push(i);
 					visit_table[i] = true;
@@ -19,7 +19,7 @@ nrdfs(int u) {
 	}
 }
 
-for (int i = 0; i < AdjMatrix.size(); i++) {
+for (int i = 0; i < AdjList.size(); i++) {
 	if (dfs_visited[i] == false) {
 		nrdfs(i);
 	}
