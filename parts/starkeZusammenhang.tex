@@ -36,6 +36,29 @@
 	\end{itemize}
 \end{frame}
 \begin{frame}
+\frametitle{SCCs finden mittels DFS}
+\framesubtitle{Idee des Algorithmus}
+	\begin{itemize}
+		\item Führe eine DFS im Graph durch.
+		\item Besuchte Knoten erhalten zwei Nummern:
+		\pause
+			\begin{enumerate}
+				\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
+				\item \textbf{dfs\_low(u):} Niedrigster Wert von \textbf{dfs\_low}, der von Knoten $u$ aus erreicht werden kann. 
+			\end{enumerate}
+		\pause
+		\item SCCs werden mittels dem von der DFS erzeugten Spannbaum gefunden
+		\pause
+		\item Wenn Backedge von einem Knoten $u$ zur Wurzel $r$ eines Teilbaums, sind alle Knoten auf \newline
+		dem Weg zwischen $u$ und $v$ in einer SCC.
+		%kurzes tafelbild dazu
+		\pause
+		\item Wenn \textbf{dfs\_low(v)} =  \textbf{dfs\_num(v)}, dann ist $v$ die "Wurzel" einer SCC
+		\pause
+		\item Knoten werden - sobald besucht - auf \textbf{STACK} gespeichert und wenn Wurzel gefunden, ausgegeben
+	\end{itemize}
+\end{frame}
+\begin{frame}
 	
 	\frametitle{SCCs finden mittels DFS}
 	\includegraphics[scale = 0.5]<1-1>{SCC.pdf}
