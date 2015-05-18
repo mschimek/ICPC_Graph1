@@ -13,28 +13,28 @@
 \end{itemize}
     \end{KITexampleblock}
 \end{frame}
-\begin{frame}
-    \frametitle{Einleitung}
-    \framesubtitle{Grundbegriffe der Graphentheorie}
-    \begin{center}
-    einige bereits bekannte Begriffe \\
-    \begin{tabular}{c | c | c}
-    \hline
-    Un/Gerichtet & Un/Gewichtet & Schlinge \\ \hline
-    (Ein/Ausgangs) Grad & Weg/Pfad & Zyklus/Kreis \\ \hline
-    Knoten ereichbar/isoliert & Teil/Untergraph & Baum \\ \hline
-    \end{tabular}
-    \end{center}
-    \begin{itemize}
-    \item einfacher Graph := ungerichteter Graph, ohne Mehrfachkanten und ohne Schleifen
-    \item DAG (directed acyclic graph) := ein gerichteter Graph ohne Zyklus
-    \item vollständiger Graph := maximale Kantenanzahl \( |E| = \frac{|V| (|V| - 1)}{2}\)
-    \item Dichte \( dn(G) = \frac{2|E|}{|V| (|V| - 1)}\)
-    \begin{itemize}
-        \item Verhältnis der Kantenanzahl zur Kantenanzahl eines vollständigen Graphen auf gleichvielen Knoten
-    \end{itemize}
-    \end{itemize}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Einleitung}
+%     \framesubtitle{Grundbegriffe der Graphentheorie}
+%     \begin{center}
+%     einige bereits bekannte Begriffe \\
+%     \begin{tabular}{c | c | c}
+%     \hline
+%     Un/Gerichtet & Un/Gewichtet & Schlinge \\ \hline
+%     (Ein/Ausgangs) Grad & Weg/Pfad & Zyklus/Kreis \\ \hline
+%     Knoten ereichbar/isoliert & Teil/Untergraph & Baum \\ \hline
+%     \end{tabular}
+%     \end{center}
+%     \begin{itemize}
+%     \item einfacher Graph := ungerichteter Graph, ohne Mehrfachkanten und ohne Schleifen
+%     \item DAG (directed acyclic graph) := ein gerichteter Graph ohne Zyklus
+%     \item vollständiger Graph := maximale Kantenanzahl \( |E| = \frac{|V| (|V| - 1)}{2}\)
+%     \item Dichte \( dn(G) = \frac{2|E|}{|V| (|V| - 1)}\)
+%     \begin{itemize}
+%         \item Verhältnis der Kantenanzahl zur Kantenanzahl eines vollständigen Graphen auf gleichvielen Knoten
+%     \end{itemize}
+%     \end{itemize}
+% \end{frame}
 
 % \begin{frame}
 %     \frametitle{Einleitung}
@@ -61,52 +61,97 @@
 % \begin{frame}
 %     \frametitle{Einleitung}
 %     \framesubtitle{Grundbegriffe der Graphentheorie}
+%         \begin{KITexampleblock}{Baum}
 %     \begin{itemize}
-%         \item Baum := maximal kreisfrei und minimal zusammenhängend
-%         \begin{itemize}
-%             \item keine Kante kann zur Kantenmenge hinzugefügt werden, ohne einen Kreis zu erzeugen, und keine kann entfernt werden, ohne die Zusammenhangs-Eigenschaft zu verletzen
-%         \end{itemize}
+        % \item maximal kreisfrei $\iff$ keine Kante kann zur Kantenmenge hinzugefügt werden, ohne einen Kreis zu erzeugen
+        % \item minimal zusammenhängend $\iff$ keine Kannte kann entfernt werden, ohne die Zusammenhangs-Eigenschaft zu verletzen
 %     \end{itemize}
+    % \begin{KITexampleblock}{Baum}
 % \end{frame}
 
 \begin{frame}
     \frametitle{Einleitung}
-    \framesubtitle{Implementierungen (gewichtet)}
+    \framesubtitle{Implementierungen}
+    \begin{KITexampleblock}{Ungerichteter Beispielgraph}
     \begin{center}
-    \includegraphics[scale = 0.35]<1-1>{./images/Einleitung/graph.png}
+    \includegraphics[scale = 0.6]<1-1>{./images/Einleitung/graph.png}
 
-    \begin{tabular}{c | c | c | c}
-     & Adj.matrix & Adj.liste & Edgelist\\ \hline
-    Code & int[][]  & vec<vec<pair<int,int>{}>{}> & vec<tuple<int,int,int> \\ \hline
-    Platz & \( \mathcal{O}(|V|^2)\) &\( \mathcal{O}(|V|+|E|)\) &\( \mathcal{O}(|E|)\) \\
-    \end{tabular}
+    % \begin{tabular}{c | c | c | c}
+    %  & Adj.matrix & Adj.liste & Edgelist\\ \hline
+    % Code & int[][]  & vec<vec<pair<int,int>{}>{}> & \\ \hline
+    % Platz & \( \mathcal{O}(|V|^2)\) &\( \mathcal{O}(|V|+|E|)\) &\( \mathcal{O}(|E|)\) \\
+    % \end{tabular}
     \end{center}
-
-    \includegraphics[scale = 0.32]<1-1>{./images/Einleitung/representation.png}
+    \end{KITexampleblock}
 \end{frame}
 
 \begin{frame}
     \frametitle{Einleitung}
-    \framesubtitle{Implementierungen Unterschiede}
-
-\begin{itemize}
-    \item Adjazenzmatrix
+    \framesubtitle{Implementierungen}
+    \begin{KITexampleblock}{Adjazenzmatrix}
+    int[][]
     \begin{itemize}
-        \item hoher Speicherverbrauh
-        \item Anwenden bei kleinen dichten Graphen
+        \item Speicherverbrauch \( \mathcal{O}(|V|^2)\)
         \item über Nachbarn iterieren \( \mathcal{O}(|V|)\)
-        \item ICPC Tipp: wenn \(V \le 1000 \)
     \end{itemize}
+    \end{KITexampleblock}
+    \vspace{0.001em}
+    \begin{KITinfoblock}{Visualisierung}
+        $\bordermatrix{
+  & 0  & 1  & 2  & 3  & 4  & 5  \cr
+0 & 0  & 23 & 2  & 0  & 0  & 0  \cr
+1 & 23 & 0  & 2  & 0  & 0  & 0  \cr
+2 & 2  & 2  & 0  & 5  & 0  & 0  \cr
+3 & 0  & 0  & 5  & 0  & 3  & 15 \cr
+4 & 0  & 0  & 0  & 3  & 0  & 0  \cr
+5 & 0  & 0  & 0  & 15 & 0  & 0  \cr
+}$
+    \end{KITinfoblock}
+\end{frame}
 
-    \item Adjazenzliste
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Implementierungen}
+    \begin{KITexampleblock}{Adjazenzlist}
+    vetor<vetor<pair<int,int>{}>{}>
     \begin{itemize}
-        \item kompakter und effizienter, da oft \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
+        \item Speicherverbrauch \( \mathcal{O}(|V|+|E|)\)
+        \item Standardwahl da kompakter und effizienter \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
         \item über alle k Nachbarn iterieren \( \mathcal{O}(k)\)
     \end{itemize}
-    \item Edgelist
+    \end{KITexampleblock}
+    \vspace{0.001em}
+    \begin{KITinfoblock}{Visualisierung}
+    \begin{tabular}{l c c c}
+        \textbf{0 :  } & (23,1) & (2,2) \\
+        \textbf{1 :  } & (23,0) & (2,2) & (5,3) \\
+        \textbf{2 :  } & (2,0) & (2,1) \\
+        \textbf{3 :  } & (5,1) & (3,4) & (15,3) \\
+        \textbf{4 :  } & (3,3) \\
+        \textbf{5 :  } & (15,3) \\
+    \end{tabular}
+    \end{KITinfoblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Einleitung}
+    \framesubtitle{Implementierungen}
+    \begin{KITexampleblock}{Kantenlist}
+    vector<tuple<int,int,int>{}>
     \begin{itemize}
+        \item Speicherverbrauch \( \mathcal{O}(|E|)\)
         \item sortiert (bspw. nach Gewicht) wichtige Representation für bestimmte Algorithmen
-        \item verkomplizier viele Algorithmen
     \end{itemize}
-\end{itemize}
+    \end{KITexampleblock}
+    \vspace{0.001em}
+    \begin{KITinfoblock}{Visualisierung}
+    \begin{tabular}{l c c c}
+        \textbf{0 :  } & 23 & 0 & 1 \\
+        \textbf{1 :  } & 2 & 0 & 2 \\
+        \textbf{2 :  } & 2 & 2 & 1 \\
+        \textbf{3 :  } & 5 & 1 & 3 \\
+        \textbf{4 :  } & 3 & 3 & 4 \\
+        \textbf{5 :  } & 15 & 3 & 5 \\
+    \end{tabular}
+    \end{KITinfoblock}
 \end{frame}
