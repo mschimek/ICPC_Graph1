@@ -27,7 +27,7 @@
 			
 			\item Sei $b$ den durchschnittliche Grad, und $d$ die minimale Lösungstiefe eines gegebenen Graph $G$.
 			  
-			\vspace{0.08in}
+			\vspace{0.05in}
 			Der Zeitaufwand der iterativen Tiefensuche ist dann
 			\linebreak[2]
 			$(d+1) + db + (d-1)b^2 + (d-2)b^3 + ... + 2b^{d-1} + b^d = \mathcal{O}(b^d)$
@@ -70,7 +70,8 @@
 \end{frame}
 
 \begin{frame}
-	\begin{KITinfoblock}{Warum dann nicht BFS oder DFS}
+	\frametitle{Iterative Tiefensuche}
+	\begin{KITinfoblock}{Bewertung}
 	 \begin{itemize}
 	 	\item Einige Graphen können mit herkömmlichen Suchverfahren nicht durchgelaufen werden, bspw. implizite Graphen, die unendlich Groß sind, und können im Speicher nicht gehalten werden. \vspace{0.2in}
 
