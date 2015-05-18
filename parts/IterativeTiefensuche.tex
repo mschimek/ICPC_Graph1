@@ -4,53 +4,90 @@
 	
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\begin{KITinfoblock}{Idee des Algorithmus}
+	\begin{KITinfoblock}{Begrenzt Tiefensuche}
 	\begin{itemize}
-		\item DFS Algorithmus mit begrenzt Suchtiefe, repetiert mit steigenden Werte.
-		\item Besucht neue Knoten in BFS Ordnung, hat aber geringer Speicherverbrauch als BFS
-		\begin{itemize}		
-			\item BFS Speicherverbrauch: $\mathcal{O}(b^d)$
-			\item Iterative Tiefensuche Speicherverbrauch: $\mathcal{O}(bd)$
-		\end{itemize}
-		Wo $b$ (\textit{branching factor}) die durchschnittliche Zahl Nachbarn eines Knotens ist,
-	
-		und $d$ die Tiefe des flachsten Ziels.
-		\item Laufzeit: $\mathcal{O}(b^d)$
+		\item \textbf{Begrenzt Tiefensuche}: wird als eine DFS Suche gebaut, die nicht tiefer als eine Tiefe $T$ sucht (tiefere Knoten werden ignoriert).
+		\item Für sich allein nur in besonderen Situationen nützlich, ist aber eine wichtige Komponente in Iterative Tiefensuche.
 	\end{itemize}
 	\end{KITinfoblock}
-
 \end{frame}
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\includegraphics[scale = 0.5]<1-1>{images/Iterative/G1}  
-	\includegraphics[scale = 0.5]<2-2>{images/Iterative/G2}
-	\includegraphics[scale = 0.5]<3-3>{images/Iterative/G3}
-	\includegraphics[scale = 0.5]<4-4>{images/Iterative/G4}
-	\includegraphics[scale = 0.5]<5-5>{images/Iterative/G5}
+	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++,lastline=17]{sourcecode/iterativeDFS.cpp}	
 \end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\begin{KITinfoblock}{Iterative Tiefensuche}
+		\begin{itemize}
+			\item Idee: Führe eine Folge begrentzter Tiefensuchen mit ansteigender Tiefengrenze, bis eine Lösung gefunden wird.
+			
+			\item Sei $b$ den durchschnittliche Grad, und $d$ die minimale Lösungstiefe eines gegebenen Graph $G$.
+			  
+			\vspace{0.08in}
+			Der Zeitaufwand der iterativen Tiefensuche ist dann
+			\linebreak[2]
+			$(d+1) + db + (d-1)b^2 + (d-2)b^3 + ... + 2b^{d-1} + b^d = \mathcal{O}(b^d)$
+			
+			und der Speicheraufwand beträgt $\mathcal{O}(bd)$.
+			\begin{itemize}
+				\item BFS $\Rightarrow 1 + b + b^2 + ... + b^d = \mathcal{O}(b^d)$
+			\end{itemize}			
+		\end{itemize}
+	\end{KITinfoblock}
+	\pause
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++,firstline=19]{sourcecode/iterativeDFS.cpp}
 	
-\begin{frame}
-	\frametitle{Iterative Tiefensuche}
-	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
-	\lstinputlisting[style=customc++,lastline=13]{sourcecode/iterativeDFS.cpp}	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
-	\lstinputlisting[style=customc++,firstline=15,lastline=29]{sourcecode/iterativeDFS.cpp}	
+	\includegraphics[scale = 0.6]<1-1>{images/Iterative/d0.pdf}
+	\includegraphics[scale = 0.6]<2-2>{images/Iterative/d1.pdf}
+	\includegraphics[scale = 0.6]<3-3>{images/Iterative/d2.pdf}
+	\includegraphics[scale = 0.6]<4-4>{images/Iterative/d3.pdf}
+	\includegraphics[scale = 0.6]<5-5>{images/Iterative/d4.pdf}
+	\includegraphics[scale = 0.6]<6-6>{images/Iterative/d5.pdf}
+	\includegraphics[scale = 0.6]<7-7>{images/Iterative/d6.pdf}
+	\includegraphics[scale = 0.6]<8-8>{images/Iterative/d7.pdf}
+	\includegraphics[scale = 0.6]<9-9>{images/Iterative/d8.pdf}
+	\includegraphics[scale = 0.6]<10-10>{images/Iterative/d9.pdf}
+	\includegraphics[scale = 0.6]<11-11>{images/Iterative/d10.pdf}
+	\includegraphics[scale = 0.6]<12-12>{images/Iterative/d11.pdf}
+	\includegraphics[scale = 0.6]<13-13>{images/Iterative/d12.pdf}
+	\includegraphics[scale = 0.6]<14-14>{images/Iterative/d13.pdf}
+	\includegraphics[scale = 0.6]<15-15>{images/Iterative/d14.pdf}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\Large Warte mal: \normalsize jede Iteration besucht die vorherige Knoten noch einmal!
+	Warum dann nicht BFS oder DFS benutzen?
+\end{frame}
+
+\begin{frame}
+	\begin{KITinfoblock}{Warum dann nicht BFS oder DFS}
+	 \begin{itemize}
+	 	\item Einige Graphen können mit herkömmlichen Suchverfahren nicht durchgelaufen werden, bspw. implizite Graphen, die unendlich Groß sind, und können im Speicher nicht gehalten werden. \vspace{0.2in}
+
+		\includegraphics[scale = 0.49]<1-1>{images/Iterative/grid2.pdf}
+		
+	\end{itemize}
+	\end{KITinfoblock}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
 	\begin{KITexampleblock}{Schach}
 		\begin{itemize}
-			\item Besonders sinnvoll für Probleme, die hoch branching factor haben, z.B.: \textbf{Schach}
-			\item Im Durchschnitt hat ein Schachspieler für jeder Position 35\textasciitilde38 mögliche Bewegungen
-			\item Iterative Tiefensuche findet die beste Bewegung bis zum eine 
-			
-			Tiefe $T$, innerhalb ein Zeitlimit
+			\item Auch sinnvoll für Probleme, die einen sehr hohen branching factor $b$ haben, z.B.: \textbf{Schach}
+			\item Im Durchschnitt hat ein Schachspieler für jeder Position 35\textasciitilde38 mögliche Züge. Das heißt, nach 5 Züge werden \textasciitilde$10^7$ Positionen möglich, nach 10 Züge \textasciitilde$10^{15}$.
+			\item Adaptierte iterative Tiefensuche berechnet den besten Zug bis entweder der Zeit abgelaufen ist oder die maximale Suchtiefe erreicht ist.
+			\item Suche kann mit Heuristiken verbessert werden, so dass die besten Richtungen ersten erforscht sind.
 		\end{itemize}
 	\end{KITexampleblock}
 \end{frame}
@@ -60,4 +97,9 @@
 	\includegraphics[scale = 0.4]<1-1>{images/Iterative/chess1}
 	\includegraphics[scale = 0.4]<2-2>{images/Iterative/chess2}
 	\includegraphics[scale = 0.4]<3-3>{images/Iterative/chess3}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\Large Source code: \href{www.craftychess.com/crafty-23.4.zip}{www.craftychess.com/crafty-23.4.zip}
 \end{frame}

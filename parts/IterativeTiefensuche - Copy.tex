@@ -1,0 +1,63 @@
+\begin{frame}
+		\Huge Iterative Tiefensuche
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\begin{KITinfoblock}{Idee des Algorithmus}
+	\begin{itemize}
+		\item DFS Algorithmus mit begrenzt Suchtiefe, repetiert mit steigenden Werte.
+		\item Besucht neue Knoten in BFS Ordnung, hat aber geringer Speicherverbrauch als BFS
+		\begin{itemize}		
+			\item BFS Speicherverbrauch: $\mathcal{O}(b^d)$
+			\item Iterative Tiefensuche Speicherverbrauch: $\mathcal{O}(bd)$
+		\end{itemize}
+		Wo $b$ (\textit{branching factor}) die durchschnittliche Zahl Nachbarn eines Knotens ist,
+	
+		und $d$ die Tiefe des flachsten Ziels.
+		\item Laufzeit: $\mathcal{O}(b^d)$
+	\end{itemize}
+	\end{KITinfoblock}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\includegraphics[scale = 0.5]<1-1>{images/Iterative/G1}  
+	\includegraphics[scale = 0.5]<2-2>{images/Iterative/G2}
+	\includegraphics[scale = 0.5]<3-3>{images/Iterative/G3}
+	\includegraphics[scale = 0.5]<4-4>{images/Iterative/G4}
+	\includegraphics[scale = 0.5]<5-5>{images/Iterative/G5}
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
+	\lstinputlisting[style=customc++,lastline=13]{sourcecode/iterativeDFS.cpp}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
+	\lstinputlisting[style=customc++,firstline=15,lastline=29]{sourcecode/iterativeDFS.cpp}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\begin{KITexampleblock}{Schach}
+		\begin{itemize}
+			\item Besonders sinnvoll für Probleme, die hoch branching factor haben, z.B.: \textbf{Schach}
+			\item Im Durchschnitt hat ein Schachspieler für jeder Position 35\textasciitilde38 mögliche Bewegungen
+			\item Iterative Tiefensuche findet die beste Bewegung bis zum eine 
+			
+			Tiefe $T$, innerhalb ein Zeitlimit
+		\end{itemize}
+	\end{KITexampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Iterative Tiefensuche}
+	\includegraphics[scale = 0.4]<1-1>{images/Iterative/chess1}
+	\includegraphics[scale = 0.4]<2-2>{images/Iterative/chess2}
+	\includegraphics[scale = 0.4]<3-3>{images/Iterative/chess3}
+\end{frame}

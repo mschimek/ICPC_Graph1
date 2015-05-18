@@ -4,8 +4,7 @@
 
 \begin{frame}
 	\frametitle{Bipartite Graphen}
-	\framesubtitle{Definition}
-	\begin{KITinfoblock}{Separatoren und Brücken in ungerichteten Graphen}
+	\begin{KITinfoblock}{Definition}
 		Sei $G = (V,E)$ ein ungerichteter Graph.
 	\begin{itemize}
 		\item  $G$ heißt \textbf{Bipartite} falls sich seine Knoten in zwei disjunkte Teilmengen $A, B$ aufteilen lassen, so dass es zwischen den Knoten innerhalb einer Teilmenge keine Kanten gibt.
@@ -13,6 +12,18 @@
 	\end{itemize}
 	\end{KITinfoblock}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Bipartite Graphen}
+	\begin{KITexampleblock}{UVa 10004 Bicoloring}
+		
+		  	
+		Ein ungerichteter Graph wird als Eingabe gegeben. Die Aufgabe ist zu bestimmen, ob der Graph eingefärbt werden kann, so dass keine zwei benachbarten Knoten die gleiche Farbe haben.
+		 
+		  
+	\end{KITexampleblock}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Bipartite Graphen}
 	\framesubtitle{Beispiel}
@@ -39,11 +50,13 @@
 \begin{frame}
 	\frametitle{Bipartite Graph Check}
 	\framesubtitle{DFS Algorithmus}
-	\lstinputlisting[style=customc++]{sourcecode/bipartiteDFS.cpp}	
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++]{sourcecode/bipartiteDFS.cpp}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Bipartite Graph Check}
 	\framesubtitle{BFS Algorithmus}
-	\lstinputlisting[style=customc++]{sourcecode/bipartiteBFS.cpp}	
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++]{sourcecode/bipartiteBFS.cpp}	
 \end{frame}

@@ -1,7 +1,7 @@
 vector< vector<int> > adjList;
 vector<int> colorDFS[200];
 const int UNVISITED = -1, NOT_BIP = 0, BIP = 1;
-int solveDFS(int v, int color) //int main() -> solveDFS(0,0)
+int checkDFS(int v, int color) //int main() -> checkDFS(0,0)
 {
 	if(colorDFS[v] == UNVISITED)
 	{

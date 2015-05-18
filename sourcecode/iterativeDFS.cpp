@@ -1,29 +1,24 @@
-vector< vector<int> > adjList;
-const int LIMITBREAK = -1;
-
-int iterativeDFS(int origin)
+vector<node> goalPath;
+int limitedDFS(node v, int depth)
 {
-	int depth = 0, found = LIMITBREAK;
-	while(found == LIMITBREAK) 
-	{
-		found = limitedDFS(origin,depth);
-		depth++;
+	if(v == goal) {
+		goalPath.push_back(v);
+		return 1;
 	}
-	return found;
-}
 	
-int limitedDFS(int v, int depth)
-{
-	if(depth == 0 && v == goal)
-		return v;
-	else if(depth > 0)
-	{
-		for(int i = 0; i < adjList[v].size(); i++)	
-		{
-			int found = limitedDFS(adjList[v][i], depth-1);
-			if(found != LIMITBREAK)
-				return found;
-		}
-	}
-	return LIMITBREAK;
+	if(depth > 0) {
+		vector<node> neighbors = neighborhood(v);
+		for( int i = 0; i < neighbors.size(); i++) {
+			if( limitedDFS(neighbors[i], depth-1) == 1) {	
+				goalPath.push_back(v);
+				return 1;
+	}	}	}
+	return 0;
+}
+
+void iterativeDFS(node origin) {
+	int depth = 0;
+	while( limitedDFS(origin,depth) != 1) 
+		depth++;
+	return;
 }
