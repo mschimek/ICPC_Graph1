@@ -7,7 +7,7 @@ bool dfs_visited[AdjList.size()] = {0};
 void dfs(int u) {
 	dfs_visited[u] = true;
 	// possibly do something
-	for (int i = 0; i < AdjList[u].size(); i++) {
+	for (int i = 0; i < (int) AdjList[u].size(); i++) {
 		if (AdjList[u][i] == 1 
 			&& dfs_visited[i] == false) {
 			dfs(i);
