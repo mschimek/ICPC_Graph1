@@ -4,9 +4,9 @@
 	
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\begin{KITinfoblock}{Begrenzt Tiefensuche}
+	\begin{KITinfoblock}{Begrenzte Tiefensuche}
 	\begin{itemize}
-		\item \textbf{Begrenzt Tiefensuche}: wird als eine DFS Suche gebaut, die nicht tiefer als eine Tiefe $T$ sucht (tiefere Knoten werden ignoriert).
+		\item \textbf{Begrenzte Tiefensuche}: wird als eine DFS durchgeläuft, die nicht tiefer als eine Tiefe $T$ sucht (tiefere Knoten werden ignoriert).
 		\item Für sich allein nur in besonderen Situationen nützlich, ist aber eine wichtige Komponente in Iterative Tiefensuche.
 	\end{itemize}
 	\end{KITinfoblock}
@@ -14,7 +14,7 @@
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\framesubtitle{Rekursive begrenzt DFS Algorithmus}
+	\framesubtitle{Rekursive begrenzte DFS Algorithmus}
 	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
 	\lstinputlisting[language=C++,lastline=17]{sourcecode/iterativeDFS.cpp}	
 \end{frame}
@@ -23,9 +23,9 @@
 	\frametitle{Iterative Tiefensuche}
 	\begin{KITinfoblock}{Iterative Tiefensuche}
 		\begin{itemize}
-			\item Idee: Führe eine Folge begrentzter Tiefensuchen mit ansteigender Tiefengrenze, bis eine Lösung gefunden wird.
+			\item Idee: Führe eine Folge begrentzter Tiefensuchen mit ansteigender Tiefengrenze durch bis eine Lösung gefunden wird.
 			
-			\item Sei $b$ den durchschnittliche Grad, und $d$ die minimale Lösungstiefe eines gegebenen Graph $G$.
+			\item Sei $b$ der durchschnittliche Knotengrad und $d$ die minimale Lösungstiefe eines gegebenen Graphen $G$.
 			  
 			\vspace{0.05in}
 			Der Zeitaufwand der iterativen Tiefensuche ist dann
@@ -46,6 +46,7 @@
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
+	\framesubtitle{Beispiel (gerichteter Graph)}
 	\includegraphics[scale = 0.6]<1-1>{images/Iterative/d0.pdf}
 	\includegraphics[scale = 0.6]<2-2>{images/Iterative/d1.pdf}
 	\includegraphics[scale = 0.6]<3-3>{images/Iterative/d2.pdf}
@@ -65,7 +66,7 @@
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
-	\Large Warte mal: \normalsize jede Iteration besucht die vorherige Knoten noch einmal!
+	\Large Warte mal: \normalsize jede Iteration besucht die vorherigen Knoten noch einmal!
 	Warum dann nicht BFS oder DFS benutzen?
 \end{frame}
 
@@ -73,7 +74,7 @@
 	\frametitle{Iterative Tiefensuche}
 	\begin{KITinfoblock}{Bewertung}
 	 \begin{itemize}
-	 	\item Einige Graphen können mit herkömmlichen Suchverfahren nicht durchgelaufen werden, bspw. implizite Graphen, die unendlich Groß sind, und können im Speicher nicht gehalten werden. \vspace{0.2in}
+	 	\item Einige Graphen können mit herkömmlichen Suchverfahren nicht durchgelaufen werden, bspw. implizite Graphen die unendlich Groß sind und nicht im Speicher gehalten werden können. \vspace{0.2in}
 
 		\includegraphics[scale = 0.49]<1-1>{images/Iterative/grid2.pdf}
 		
@@ -86,15 +87,16 @@
 	\begin{KITexampleblock}{Schach}
 		\begin{itemize}
 			\item Auch sinnvoll für Probleme, die einen sehr hohen branching factor $b$ haben, z.B.: \textbf{Schach}
-			\item Im Durchschnitt hat ein Schachspieler für jeder Position 35\textasciitilde38 mögliche Züge. Das heißt, nach 5 Züge werden \textasciitilde$10^7$ Positionen möglich, nach 10 Züge \textasciitilde$10^{15}$.
-			\item Adaptierte iterative Tiefensuche berechnet den besten Zug bis entweder der Zeit abgelaufen ist oder die maximale Suchtiefe erreicht ist.
-			\item Suche kann mit Heuristiken verbessert werden, so dass die besten Richtungen ersten erforscht sind.
+			\item Im Durchschnitt hat ein Schachspieler für jede Position 35\textasciitilde38 mögliche Züge. Das heißt, nach 5 Zügen werden \textasciitilde$10^7$ Positionen möglich, nach 10 Zügen \textasciitilde$10^{15}$.
+			\item Adaptierte iterative Tiefensuche berechnet den besten Zug bis entweder die Zeit abgelaufen ist oder die maximale Suchtiefe erreicht ist.
+			\item Suche kann mit Heuristiken verbessert werden, so dass die vielversprechendsten Richtungen zuerst erforscht sind.
 		\end{itemize}
 	\end{KITexampleblock}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Iterative Tiefensuche}
+		\framesubtitle{Schach}
 	\includegraphics[scale = 0.4]<1-1>{images/Iterative/chess1}
 	\includegraphics[scale = 0.4]<2-2>{images/Iterative/chess2}
 	\includegraphics[scale = 0.4]<3-3>{images/Iterative/chess3}
