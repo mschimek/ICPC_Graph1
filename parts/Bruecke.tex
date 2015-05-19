@@ -40,46 +40,59 @@
 \begin{frame}
 	\frametitle{Brücken und Separatoren}
 	\framesubtitle{Idee des effizienten Algorithmus'}
+	\begin{KITinfoblock}{Numerierung}
 	\begin{itemize}
 		\item Führe eine DFS im Graph durch.
 		\item Besuchte Knoten erhalten zwei Nummern:
-		\pause
+		
 			\begin{enumerate}
 				\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
-				\item \textbf{dfs\_low(u):} Niedrigster Wert von \textbf{dfs\_low}, der von Knoten $u$ aus erreicht werden kann. 
+				\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
 			\end{enumerate}
+\end{itemize}
+\end{KITinfoblock}
+	\begin{itemize}		
 			\pause
 			\item Wenn \textbf{dfs\_low(v)} $\geq$ \textbf{dfs\_num(u)}, dann ist $u$ ein Separator 
 			\pause
 			\begin{itemize}
 				 \item Von $v$ kann kein Knoten $w$ "vor" $u$ erreicht werden.
-				 \item "vor" bedeutet: (\textbf{dfs\_num($w$)} $>$ \textbf{dfs\_num($u$)})
+				 \item "vor" bedeutet: \textbf{dfs\_num($w$)} $>$ \textbf{dfs\_num($u$)}
 				 \item Um Knoten $w$ "vor" $u$ zu erreichen, muss man durch $u$ laufen.
 				 \item $\Rightarrow$ $u$ teilt Graph in zwei Zusammenhangskomponenten.
-				 \item (Spezialfall: Gilt nicht, wenn $u$ Wurzel der DFS)
+				 \item Spezialfall: Gilt nicht, wenn $u$ Wurzel der DFS
 			\end{itemize} 
 	\end{itemize}
 \end{frame}
 \begin{frame}
-		\frametitle{Brücken und Separatoren}
-		\framesubtitle{Idee des effizienten Algorithmus'}
+\frametitle{Brücken und Separatoren}
+\framesubtitle{Idee des effizienten Algorithmus'}
+\begin{KITinfoblock}{Numerierung}
 	\begin{itemize}
-	\item Besuchte Knoten erhalten zwei Nummern:
-	\begin{enumerate}
-		\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
-		\item \textbf{dfs\_low(u):} Niedrigster Wert von \textbf{dfs\_low}, der von Knoten $u$ aus erreicht werden kann. 
-	\end{enumerate}
-	\pause
-	\item Wenn \textbf{dfs\_low(v)} $>$ \textbf{dfs\_num(u)}, dann ist $\{u,v\}$ eine Brücke
-	\begin{itemize}
-		\item Von $v$ kann Knoten $v$ nur über die Kante ${u,v}$ erreicht werden.
-		\item Ansonsten \textbf{dfs\_low(v)} $seq$ \textbf{dfs\_num(u)}.
-		\item $\Rightarrow$ $\{u,v\}$ teilt Graph in zwei Zusammenhangskomponenten.
-	\end{itemize} 
-\end{itemize}
+		\item Führe eine DFS im Graph durch.
+		\item Besuchte Knoten erhalten zwei Nummern:
+		
+		\begin{enumerate}
+			\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
+			\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
+		\end{enumerate}
+	\end{itemize}
+\end{KITinfoblock}
+\pause
+			\begin{itemize}	
+
+		\item Wenn \textbf{dfs\_low(v)} $>$ \textbf{dfs\_num(u)}, dann ist $\{u,v\}$ eine Brücke
+		\begin{itemize}
+			\item Von $v$ kann Knoten $v$ nur über die Kante ${u,v}$ erreicht werden.
+			\item Ansonsten \textbf{dfs\_low(v)} $seq$ \textbf{dfs\_num(u)}.
+			\item $\Rightarrow$ $\{u,v\}$ teilt Graph in zwei Zusammenhangskomponenten.
+		\end{itemize} 
+	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Brücken und Separatoren}
 	\framesubtitle{Illustration des Algorithmus'}
-	\includegraphics[scale = 0.75]{Bruecke_Separator_Algo.pdf}
+	\includegraphics[scale = 0.65, page=1]<1-1>{Bruecke_Separator_Algo.pdf}
+	\includegraphics[scale = 0.65, page=2]<2-2>{Bruecke_Separator_Algo.pdf}
+	\includegraphics[scale = 0.65, page=3]<3-3>{Bruecke_Separator_Algo.pdf}
 \end{frame}

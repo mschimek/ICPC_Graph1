@@ -44,11 +44,36 @@
 		\pause
 			\begin{enumerate}
 				\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
-				\item \textbf{dfs\_low(u):} Niedrigster Wert von \textbf{dfs\_low}, der von Knoten $u$ aus erreicht werden kann. 
+				\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
 			\end{enumerate}
 		\pause
 		\item SCCs werden mittels dem von der DFS erzeugten Spannbaum gefunden
 		\pause
+		\item Wenn Backedge von einem Knoten $u$ zur Wurzel $r$ eines Teilbaums, sind alle Knoten auf \newline
+		dem Weg zwischen $u$ und $v$ in einer SCC.
+		%kurzes tafelbild dazu
+	
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{SCCs finden mittels DFS}
+	\framesubtitle{DFS-Spannbaum}
+	\includegraphics[scale = 0.6]<1-1>{spannbaum.pdf}
+\end{frame}
+\begin{frame}
+	\frametitle{SCCs finden mittels DFS}
+	\framesubtitle{Idee des Algorithmus}
+	\begin{itemize}
+		\item Führe eine DFS im Graph durch.
+		\item Besuchte Knoten erhalten zwei Nummern:
+		
+		\begin{enumerate}
+			\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
+			\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
+		\end{enumerate}
+		
+		\item SCCs werden mittels dem von der DFS erzeugten Spannbaum gefunden
+		
 		\item Wenn Backedge von einem Knoten $u$ zur Wurzel $r$ eines Teilbaums, sind alle Knoten auf \newline
 		dem Weg zwischen $u$ und $v$ in einer SCC.
 		%kurzes tafelbild dazu
@@ -60,21 +85,25 @@
 \end{frame}
 \begin{frame}
 	
+	
 	\frametitle{SCCs finden mittels DFS}
-	\includegraphics[scale = 0.5]<1-1>{SCC.pdf}
-	\includegraphics[scale = 0.5]<2-2>{SCC_1.pdf}
-	\includegraphics[scale = 0.5]<3-3>{SCC_2.pdf}
-	\includegraphics[scale = 0.5]<4-4>{SCC_3.pdf}
-	\includegraphics[scale = 0.5]<5-5>{SCC_5.pdf}
-	\includegraphics[scale = 0.5]<6-6>{SCC_6.pdf}
-	\includegraphics[scale = 0.5]<7-7>{SCC_7_2.pdf}
-	\includegraphics[scale = 0.5]<8-8>{SCC_7.pdf}
-	\includegraphics[scale = 0.5]<9-9>{SCC_8.pdf}
-	\includegraphics[scale = 0.5]<10-10>{SCC_9.pdf}
-	\includegraphics[scale = 0.5]<11-11>{SCC_10.pdf}
-	\includegraphics[scale = 0.5]<12-12>{SCC_11.pdf}
-	\includegraphics[scale = 0.5]<13-13>{SCC_12.pdf}
-	\includegraphics[scale = 0.5]<14-14>{SCC_13.pdf}
+	\includegraphics[scale = 0.6, page=1]<1-1>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=2]<2-2>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=3]<3-3>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=4]<4-4>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=5]<5-5>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=6]<6-6>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=7]<7-7>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=8]<8-8>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=9]<9-9>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=10]<10-10>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=11]<11-11>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=12]<12-12>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=13]<13-13>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=14]<14-14>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=15]<15-15>{SCC_Beispiel_all.pdf}
+	\includegraphics[scale = 0.6, page=16]<16-16>{SCC_Beispiel_all.pdf}
+	
 \end{frame}
 
 \begin{frame}
