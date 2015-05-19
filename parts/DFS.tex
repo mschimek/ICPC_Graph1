@@ -1,4 +1,9 @@
 \begin{frame}
+	\Huge Tiefensuche
+	\Large depth-first search, BFS
+\end{frame}
+
+\begin{frame}
 	\frametitle{Tiefensuche}
 	\framesubtitle{Einführung}
 	\begin{KITexampleblock}{Indiana Jones and the Fate of Atlantis}
@@ -34,13 +39,7 @@
 	\includegraphics<4-4>{labyrinth04.eps}
 	\includegraphics<5-5>{labyrinth05.eps}
 	\includegraphics<6-6>{labyrinth06.eps}
-	\includegraphics<7-7>{labyrinth07.eps}
-	\includegraphics<8-8>{labyrinth08.eps}
-	\includegraphics<9-9>{labyrinth09.eps}
-	\includegraphics<10-10>{labyrinth10.eps}
-	\includegraphics<11-11>{labyrinth11.eps}
-	\includegraphics<12-12>{labyrinth12.eps}
-	\includegraphics<13-13>{labyrinth13.eps}
+	\includegraphics<7-7>{labyrinth13.eps}
 \end{center}
 \end{frame}
 
@@ -48,7 +47,7 @@
 	\frametitle{Tiefensuche}
 	\framesubtitle{rekursive Implementierung}
 	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
-	\lstinputlisting[language=C++,firstline=5, lastline=22]{sourcecode/dfs.h}
+	\lstinputlisting[language=C++,firstline=5, lastline=21]{sourcecode/dfs.cpp}
 \end{frame}
 
 \begin{frame}
@@ -102,46 +101,14 @@
 	\frametitle{Tiefensuche}
 	\framesubtitle{nichtrekursive Implementierung}
 	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
-	\lstinputlisting[language=C++,firstline=1, lastline=20]{sourcecode/nrdfs.h}
+	\lstinputlisting[language=C++,firstline=14, lastline=28]{sourcecode/nrdfs.cpp}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Tiefensuche}
-	\framesubtitle{graphische Darstellung}
-	\begin{center}
-		\includegraphics[scale = 0.4]<1-1>{nr01.eps}
-		\includegraphics[scale = 0.4]<2-2>{nr02.eps}
-		\includegraphics[scale = 0.4]<3-3>{nr03.eps}
-		\includegraphics[scale = 0.4]<4-4>{nr04.eps}
-		\includegraphics[scale = 0.4]<5-5>{nr05.eps}
-		\includegraphics[scale = 0.4]<6-6>{nr06.eps}
-		\includegraphics[scale = 0.4]<7-7>{nr07.eps}
-		\includegraphics[scale = 0.4]<8-8>{nr08.eps}
-		\includegraphics[scale = 0.4]<9-9>{nr09.eps}
-		\includegraphics[scale = 0.4]<10-10>{nr10.eps}
-		\includegraphics[scale = 0.4]<11-11>{nr11.eps}
-		\includegraphics[scale = 0.4]<12-12>{nr12.eps}
-		\includegraphics[scale = 0.4]<13-13>{nr13.eps}
-		\includegraphics[scale = 0.4]<14-14>{nr14.eps}
-		\includegraphics[scale = 0.4]<15-15>{nr15.eps}
-		\includegraphics[scale = 0.4]<16-16>{nr16.eps}
-		\includegraphics[scale = 0.4]<17-17>{nr17.eps}
-		\includegraphics[scale = 0.4]<18-18>{nr18.eps}
-		\includegraphics[scale = 0.4]<19-19>{nr19.eps}
-		\includegraphics[scale = 0.4]<20-20>{nr20.eps}
-		\includegraphics[scale = 0.4]<21-21>{nr21.eps}
-		\includegraphics[scale = 0.4]<22-22>{nr22.eps}
-		\includegraphics[scale = 0.4]<23-23>{nr23.eps}
-		\includegraphics[scale = 0.4]<24-24>{nr24.eps}
-		\includegraphics[scale = 0.4]<25-25>{nr29.eps}
-		\includegraphics[scale = 0.4]<26-26>{nr30.eps}
-		\includegraphics[scale = 0.4]<27-27>{nr31.eps}
-		\includegraphics[scale = 0.4]<28-28>{nr32.eps}
-		\includegraphics[scale = 0.4]<29-29>{nr25.eps}
-		\includegraphics[scale = 0.4]<30-30>{nr26.eps}
-		\includegraphics[scale = 0.4]<31-31>{nr27.eps}
-		\includegraphics[scale = 0.4]<32-32>{nr28.eps}
-	\end{center}
+	\framesubtitle{nichtrekursive Implementierung}
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
+	\lstinputlisting[language=C++,firstline=29, lastline=39]{sourcecode/nrdfs.cpp}
 \end{frame}
 
 \begin{frame}
