@@ -21,7 +21,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs00.png}
+        \includegraphics[scale=1.30]<1-1>{bfs000.pdf}
     \end{center}
 
     Startknoten s = 6 \hspace{0.5cm} Queue q = \{6\} \hspace{0.5cm} Markierte Knotenmege d = \{6\}
@@ -31,7 +31,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs01.png}
+        \includegraphics[scale=1.30]<1-1>{bfs001.pdf}
     \end{center}
 
     u = 6 \hspace{1cm} q = \{\} \\ d = \{6\}
@@ -40,7 +40,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs02.png}
+        \includegraphics[scale=1.30]<1-1>{bfs002.pdf}
     \end{center}
 
     u = 6 \hspace{1cm} q = \{2\} \\ d = \{6, 2\}
@@ -49,7 +49,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs03.png}
+        \includegraphics[scale=1.30]<1-1>{bfs003.pdf}
     \end{center}
 
     u = 6 \hspace{1cm} q = \{2, 7\} \\ d = \{6, 2, 7\}
@@ -58,7 +58,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs04.png}
+        \includegraphics[scale=1.30]<1-1>{bfs004.pdf}
     \end{center}
 
     u = 6 \hspace{1cm} q = \{2, 7, 9\} \\ d = \{6, 2, 7, 9\}
@@ -67,7 +67,7 @@
 %     \frametitle{Breitensuche}
 %     \framesubtitle{Beispiel}
 %     \begin{center}
-%         \includegraphics[scale=0.50]<1-1>{bfs05.png}
+%         \includegraphics[scale=1.30]<1-1>{bfs05.png}
 %     \end{center}
 %
 %     u = 2 \hspace{1cm} q = \{7, 9\} \\ d = \{6, 2, 7, 9\}
@@ -76,7 +76,7 @@
 %     \frametitle{Breitensuche}
 %     \framesubtitle{Beispiel}
 %     \begin{center}
-%         \includegraphics[scale=0.50]<1-1>{bfs06.png}
+%         \includegraphics[scale=1.30]<1-1>{bfs06.png}
 %     \end{center}
 %
 %     u = 2 \hspace{1cm} q = \{7, 9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
@@ -85,7 +85,7 @@
 %     \frametitle{Breitensuche}
 %     \framesubtitle{Beispiel}
 %     \begin{center}
-%         \includegraphics[scale=0.50]<1-1>{bfs07.png}
+%         \includegraphics[scale=1.30]<1-1>{bfs07.png}
 %     \end{center}
 %
 %     u = 7 \hspace{1cm} q = \{9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
@@ -94,7 +94,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs08.png}
+        \includegraphics[scale=1.30]<1-1>{bfs005.pdf}
     \end{center}
 
     u = 9 \hspace{1cm} q = \{1, 3, 8, 10, 11\} \\ d = \{6, 2, 7, 9, 1, 3, 8, 10, 11\}
@@ -103,7 +103,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs09.png}
+        \includegraphics[scale=1.30]<1-1>{bfs006.pdf}
     \end{center}
 
     u = 11 \hspace{1cm} q = \{0, 5, 4\} \\ d = \{6, 2, 7, 9, 1, 3, 8, 10, 11, 0, 5, 4\}
@@ -112,7 +112,7 @@
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
     \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs10.png}
+        \includegraphics[scale=1.30]<1-1>{bfs007.pdf}
     \end{center}
 
     q = \{\} \\ d = \{6, 2, 7, 9, 1, 3, 8, 10, 11, 0, 5, 4\}
@@ -124,13 +124,12 @@
     \begin{itemize}
         \item \textbf{Laufzeit}: \( \mathcal{O}(|V| + |E|)\) bzw. \( \mathcal{O}(|V|^2)\)
         \item \textbf{Speicher}: \( \mathcal{O}(|V|)\) da alle endeckten Knoten gespeichert werden
-        \item statt zu markieren, speichere das "Level" (Level Elternknoten + 1) von \textbf{u} und erhälte die Entfernung zu \textbf{s} \\\(\iff\) Länge des kürzesten ungewichteten Pfades (Anzahl der Hops) von \textbf{s} nach \textbf{u}
+        \item statt zu markieren, speichere das "Level" von \textbf{u} und erhalte die "Kantenentfernung" zu \textbf{s} \\\(\iff\) Länge des kürzesten ungewichteten Pfades (Anzahl der Hops) von \textbf{s} nach \textbf{u}
     \end{itemize}
 \end{frame}
 \begin{frame}
     \frametitle{Breitensuche}
     \framesubtitle{Code}
-	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
-    \lstinputlisting[style=customc++]{sourcecode/bfs.cpp}
+    \lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
     \lstinputlisting[language=C++]{sourcecode/bfs.cpp}
 \end{frame}

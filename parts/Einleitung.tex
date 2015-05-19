@@ -3,7 +3,7 @@
 \end{frame}
 \begin{frame}
     \frametitle{Einleitung}
-    \framesubtitle{Grundbegriffe der Graphentheorie}
+    \framesubtitle{Was ist ein Graph}
     \begin{KITexampleblock}{Graph}
 \begin{itemize}
     \item Ein Graph $G$ ist ein geordnetes Paar $G = (V, E)$
@@ -11,7 +11,7 @@
     \item $E$ Menge von Kanten/Edges
     \begin{itemize}
         \item gerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V$
-        \item ungerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V \land (u,w) \in E \iff (w,u) \in E$
+        \item ungerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V \hspace{0.2cm} \land \hspace{0.2cm} (u,w) \in E \iff (w,u) \in E$
     \end{itemize}
 \end{itemize}
     \end{KITexampleblock}
@@ -74,10 +74,10 @@
 
 \begin{frame}
     \frametitle{Einleitung}
-    \framesubtitle{Implementierungen}
+    \framesubtitle{Beispiel}
     \begin{KITexampleblock}{Ungerichteter Beispielgraph}
     \begin{center}
-    \includegraphics[scale = 0.6]<1-1>{./images/Einleitung/graph.png}
+    \includegraphics[scale=1.4]<1-1>{ipe.pdf}
 
     % \begin{tabular}{c | c | c | c}
     %  & Adj.matrix & Adj.liste & Edgelist\\ \hline
@@ -96,7 +96,7 @@
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|V|^2)\)
         \item über Nachbarn iterieren \( \mathcal{O}(|V|)\)
-        \item ICPC nur bei Floyd-Warschall!!
+        \item ICPC nur bei Floyd-Warschall
     \end{itemize}
     \end{KITexampleblock}
     \vspace{0.001em}
@@ -121,8 +121,9 @@
     vector<vector<pair<int,int>{}>{}>
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|V|+|E|)\)
-        \item Standardwahl da kompakter und effizienter \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
+        \item kompakter und effizienter, da \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
         \item über alle k Nachbarn iterieren \( \mathcal{O}(k)\)
+        \item ICPC Standardwahl
     \end{itemize}
     \end{KITexampleblock}
     \vspace{0.001em}
@@ -145,8 +146,9 @@
     vector<tuple<int,int,int>{}>
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|E|)\)
-        \item sortiert (bspw. nach Gewicht) wichtige Representation für bestimmte Algorithmen
+        \item sortiert (nach Gewicht) wichtige Representation
         \item so nur für Algorithmen die ausschließlich Kanten beachten
+        \item ICPC selten
     \end{itemize}
     \end{KITexampleblock}
     \vspace{0.001em}
