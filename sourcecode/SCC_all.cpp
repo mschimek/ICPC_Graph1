@@ -16,10 +16,10 @@ vi dfs_num, dfs_low, S, visited;   // store infos;
 
 void findSCC(int u) {
 	dfs_low[u] = dfs_num[u] = dfsNumberCounter++; // initalize
-	S.push_back(u); visited[u]  = 1;
+	S.push_back(u); visited[u]  = 1; // S is Stack
 	
 	for (int j = 0; j < AdjacenceList[u].size(); j++) {
-		ii v = AdjacenceList[u][j];
+		ii v = AdjacenceList[u][j]; // Pair
 		if (dfs_num[v.first] == UNVISITED) // not yet visited by DFS
 			findSCC(v.first);
 		if (visited[v.first]) // belongs to current SCC
