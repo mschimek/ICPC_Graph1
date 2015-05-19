@@ -10,8 +10,8 @@
     \item $V$ Menge von Knoten/Vertices
     \item $E$ Menge von Kanten/Edges
     \begin{itemize}
-        \item ungerichteter Graph (ohne Mehrfachkanten) $E \subseteq \{ M \in \mathcal{P}(V) \mid |M| = 2\}$
         \item gerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V$
+        \item ungerichteter Graph (ohne Mehrfachkanten) $E \subseteq V \times V \land (u,w) \in E \iff (w,u) \in E
     \end{itemize}
 \end{itemize}
     \end{KITexampleblock}
@@ -96,6 +96,7 @@
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|V|^2)\)
         \item über Nachbarn iterieren \( \mathcal{O}(|V|)\)
+        \item ICPC nur bei Floyd-Warschall!!
     \end{itemize}
     \end{KITexampleblock}
     \vspace{0.001em}
@@ -117,7 +118,7 @@
     \frametitle{Einleitung}
     \framesubtitle{Implementierungen}
     \begin{KITexampleblock}{Adjazenzlist}
-    vetor<vetor<pair<int,int>{}>{}>
+    vector<vector<pair<int,int>{}>{}>
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|V|+|E|)\)
         \item Standardwahl da kompakter und effizienter \( |E| \ll \frac{|V| (|V| - 1)}{2} \in \mathcal{O}(|V|^2)\)
@@ -145,6 +146,7 @@
     \begin{itemize}
         \item Speicherverbrauch \( \mathcal{O}(|E|)\)
         \item sortiert (bspw. nach Gewicht) wichtige Representation für bestimmte Algorithmen
+        \item so nur für Algorithmen die ausschließlich Kanten beachten
     \end{itemize}
     \end{KITexampleblock}
     \vspace{0.001em}

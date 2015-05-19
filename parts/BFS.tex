@@ -63,33 +63,33 @@
 
     u = 6 \hspace{1cm} q = \{2, 7, 9\} \\ d = \{6, 2, 7, 9\}
 \end{frame}
-\begin{frame}
-    \frametitle{Breitensuche}
-    \framesubtitle{Beispiel}
-    \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs05.png}
-    \end{center}
-
-    u = 2 \hspace{1cm} q = \{7, 9\} \\ d = \{6, 2, 7, 9\}
-\end{frame}
-\begin{frame}
-    \frametitle{Breitensuche}
-    \framesubtitle{Beispiel}
-    \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs06.png}
-    \end{center}
-
-    u = 2 \hspace{1cm} q = \{7, 9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
-\end{frame}
-\begin{frame}
-    \frametitle{Breitensuche}
-    \framesubtitle{Beispiel}
-    \begin{center}
-        \includegraphics[scale=0.50]<1-1>{bfs07.png}
-    \end{center}
-
-    u = 7 \hspace{1cm} q = \{9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Breitensuche}
+%     \framesubtitle{Beispiel}
+%     \begin{center}
+%         \includegraphics[scale=0.50]<1-1>{bfs05.png}
+%     \end{center}
+%
+%     u = 2 \hspace{1cm} q = \{7, 9\} \\ d = \{6, 2, 7, 9\}
+% \end{frame}
+% \begin{frame}
+%     \frametitle{Breitensuche}
+%     \framesubtitle{Beispiel}
+%     \begin{center}
+%         \includegraphics[scale=0.50]<1-1>{bfs06.png}
+%     \end{center}
+%
+%     u = 2 \hspace{1cm} q = \{7, 9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
+% \end{frame}
+% \begin{frame}
+%     \frametitle{Breitensuche}
+%     \framesubtitle{Beispiel}
+%     \begin{center}
+%         \includegraphics[scale=0.50]<1-1>{bfs07.png}
+%     \end{center}
+%
+%     u = 7 \hspace{1cm} q = \{9, 1, 3\} \\ d = \{6, 2, 7, 9, 1, 3\}
+% \end{frame}
 \begin{frame}
     \frametitle{Breitensuche}
     \framesubtitle{Beispiel}
@@ -124,11 +124,13 @@
     \begin{itemize}
         \item \textbf{Laufzeit}: \( \mathcal{O}(|V| + |E|)\) bzw. \( \mathcal{O}(|V|^2)\)
         \item \textbf{Speicher}: \( \mathcal{O}(|V|)\) da alle endeckten Knoten gespeichert werden
-        \item statt zu markieren, speichere das "Level" (Level Elternknoten + 1) von \textbf{u} und erhälte die Entfernung zu \textbf{s} \\\(\iff\) Länge des kürzesten Pfades von \textbf{s} nach \textbf{u}
+        \item statt zu markieren, speichere das "Level" (Level Elternknoten + 1) von \textbf{u} und erhälte die Entfernung zu \textbf{s} \\\(\iff\) Länge des kürzesten ungewichteten Pfades (Anzahl der Hops) von \textbf{s} nach \textbf{u}
     \end{itemize}
 \end{frame}
 \begin{frame}
     \frametitle{Breitensuche}
     \framesubtitle{Code}
+	\lstset{basicstyle=\scriptsize, commentstyle=\color{mygreen},frame=single}
     \lstinputlisting[style=customc++]{sourcecode/bfs.cpp}
+    \lstinputlisting[language=C++]{sourcecode/bfs.cpp}
 \end{frame}
