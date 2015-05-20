@@ -25,7 +25,6 @@ void nrdfs(int u) {
 				i = v;
 				pos = 0;
 				dfs_visited[v] = true;
-				cout << i;
 			} else {
 				pos++;
 			}
