@@ -28,8 +28,7 @@ void nrdfs(int u) {
 			} else {
 				pos++;
 			}
-		} 
-		else {
+		} else {
 			ii p = myStack.top();
 			myStack.pop();
 			i = p.first;
