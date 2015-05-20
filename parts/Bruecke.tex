@@ -47,17 +47,17 @@
 		
 			\begin{enumerate}
 				\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
-				\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
+				\item  Sei $u'$ direkter Vorgänger von $u$ im DFS-Spannbaum, dann setze: \newline \textbf{dfs\_low(u)} = $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \ ohne \ Kante \{u',u\} \right \}$ 
 			\end{enumerate}
 \end{itemize}
 \end{KITinfoblock}
 	\begin{itemize}		
 			\pause
-			\item Wenn \textbf{dfs\_low(v)} $\geq$ \textbf{dfs\_num(u)}, dann ist $u$ ein Separator 
+			\item Wenn $v,u$ Nachbarn und \textbf{dfs\_low(v)} $\geq$ \textbf{dfs\_num(u)}, dann ist $u$ ein Separator 
 			\pause
 			\begin{itemize}
 				 \item Von $v$ kann kein Knoten $w$ "vor" $u$ erreicht werden.
-				 \item "vor" bedeutet: \textbf{dfs\_num($w$)} $>$ \textbf{dfs\_num($u$)}
+				 \item "vor" bedeutet: \textbf{dfs\_num($w$)} $<$ \textbf{dfs\_num($u$)}
 				 \item Um Knoten $w$ "vor" $u$ zu erreichen, muss man durch $u$ laufen.
 				 \item $\Rightarrow$ $u$ teilt Graph in zwei Zusammenhangskomponenten.
 				 \item Spezialfall: Gilt nicht, wenn $u$ Wurzel der DFS
@@ -74,17 +74,17 @@
 		
 		\begin{enumerate}
 			\item \textbf{dfs\_num(u):} Speichert Schritt, in dem Knoten $u$ von DFS besucht wurde.
-			\item \textbf{dfs\_low(u):}  $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \right \}$
+			\item  Sei $u'$ direkter Vorgänger von $u$ im DFS-Spannbaum, dann setze: \newline \textbf{dfs\_low(u)} = $\min \left \{\textbf{dfs\_num(v)} | v \ erreichbar \ von \ u \ ohne \ Kante \{u',u\} \right \}$ 
 		\end{enumerate}
 	\end{itemize}
 \end{KITinfoblock}
 \pause
 			\begin{itemize}	
 
-		\item Wenn \textbf{dfs\_low(v)} $>$ \textbf{dfs\_num(u)}, dann ist $\{u,v\}$ eine Brücke
+		\item Wenn $v,u$ Nachbarn und \textbf{dfs\_low(v)} $>$ \textbf{dfs\_num(u)}, dann ist $\{u,v\}$ eine Brücke
 		\begin{itemize}
-			\item Von $v$ kann Knoten $v$ nur über die Kante ${u,v}$ erreicht werden.
-			\item Ansonsten \textbf{dfs\_low(v)} $seq$ \textbf{dfs\_num(u)}.
+			\item Von $v$ kann Knoten $u$ nur über die Kante $\{u,v\}$ erreicht werden.
+			\item Ansonsten \textbf{dfs\_low(v)} $\leq$ \textbf{dfs\_num(u)}.
 			\item $\Rightarrow$ $\{u,v\}$ teilt Graph in zwei Zusammenhangskomponenten.
 		\end{itemize} 
 	\end{itemize}
