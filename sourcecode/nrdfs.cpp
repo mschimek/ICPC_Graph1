@@ -7,7 +7,7 @@ typedef vector<int> vi;
 typedef pair<int,int> ii;
 typedef vector<ii> vii;
 
-vector <vii> AdjList;
+vector <vi> AdjList;
 
 vector <bool> dfs_visited;
 
@@ -18,13 +18,13 @@ void nrdfs(int u) {
 	int i = u;
 	while (!myStack.empty() || pos < AdjList[i].size()) {
 		if (pos < (int) AdjList[i].size()) {
-			ii v = AdjList[i][pos];
-			if (dfs_visited[v.first] == false) {
+			int v = AdjList[i][pos];
+			if (dfs_visited[v] == false) {
 				ii p (i, pos + 1);
 				myStack.push(p);
-				i = v.first;
+				i = v;
 				pos = 0;
-				dfs_visited[v.first] = true;
+				dfs_visited[v] = true;
 			} else {
 				pos++;
 			}
@@ -44,13 +44,13 @@ int main() {
 	int V;
 	cin >> V;
 	for (int i = 0; i < V; i++) {
-		vii current;
+		vi current;
 		int edges;
 		cin >> edges;
 		for (int j = 0; j < edges; j++) {
 			int cur;
 			cin >> cur;
-			current.push_back(ii(cur,0));	
+			current.push_back(cur);	
 		}
 		AdjList.push_back(current);
 	}
